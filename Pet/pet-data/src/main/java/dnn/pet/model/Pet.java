@@ -2,11 +2,12 @@ package dnn.pet.model;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntity{
 	
 	private Owner owner;
 	private PetType type;
 	private LocalDate byrthday;
+	
 	public Owner getOwner() {
 		return owner;
 	}
