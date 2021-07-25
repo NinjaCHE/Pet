@@ -2,9 +2,12 @@ package dnn.pet.service.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import dnn.pet.model.Vet;
 import dnn.pet.service.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	@Override

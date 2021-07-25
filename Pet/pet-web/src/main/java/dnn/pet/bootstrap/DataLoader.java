@@ -1,28 +1,22 @@
 package dnn.pet.bootstrap;
 
-import java.time.LocalDate;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import dnn.pet.model.Owner;
-import dnn.pet.model.Pet;
-import dnn.pet.model.PetType;
 import dnn.pet.model.Vet;
 import dnn.pet.service.OwnerService;
 import dnn.pet.service.VetService;
-import dnn.pet.service.map.OwnerServiceMap;
-import dnn.pet.service.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner{
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
-	
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override
