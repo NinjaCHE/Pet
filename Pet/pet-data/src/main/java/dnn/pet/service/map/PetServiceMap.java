@@ -11,11 +11,6 @@ import dnn.pet.service.PetService;
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
 	@Override
-	public Pet save(Pet t) {
-		return super.save(t.getId(), t);
-	}
-
-	@Override
 	public Set<Pet> findAll() {
 		return super.findAll();
 	}
@@ -26,8 +21,8 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 	}
 
 	@Override
-	Pet save(Long id, Pet object) {
-		return super.save(id, object);
+	public Pet save(Pet object) {
+		return super.save(object);
 	}
 
 	@Override
