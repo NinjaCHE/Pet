@@ -3,9 +3,9 @@ package dnn.pet.service.map;
 import java.util.Set;
 
 import dnn.pet.model.Pet;
-import dnn.pet.service.CrudService;
+import dnn.pet.service.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long>{
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
 	@Override
 	public Pet save(Pet t) {
