@@ -1,11 +1,15 @@
 package dnn.pet.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -37,8 +41,17 @@ public class Pet extends BaseEntity{
 	@Column(name = "birth_date")
 	private LocalDate byrthday;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+	private Set<Visit> visits = new HashSet<>();
+	
 	public Owner getOwner() {
 		return owner;
+	}
+	public Set<Visit> getVisits() {
+		return visits;
+	}
+	public void setVisits(Set<Visit> visits) {
+		this.visits = visits;
 	}
 	public void setOwner(Owner owner) {
 		this.owner = owner;
