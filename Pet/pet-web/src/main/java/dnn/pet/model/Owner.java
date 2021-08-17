@@ -3,10 +3,32 @@ package dnn.pet.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "owners")
 public class Owner extends Person {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3670995839243983925L;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets = new HashSet<>();
-	private String address, city, telephone;
+	
+	@Column(name = "address")
+	private String address;
+	
+	@Column(name = "city")
+	String city; 
+	
+	@Column(name = "telephone")
+	String telephone;
 
 	public String getAddress() {
 		return address;
