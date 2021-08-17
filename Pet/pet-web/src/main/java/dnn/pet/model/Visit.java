@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 public class Visit extends BaseEntity {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -441099211375047712L;
 	private LocalDate date;
 	private String description;
 	private Pet pet;
